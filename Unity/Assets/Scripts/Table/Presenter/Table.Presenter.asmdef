@@ -1,0 +1,16 @@
+{
+    "name": "Table.Presenter",
+    "references": [
+        "GUID:76466b83935caf540a6aa3bf5c41ad0f",
+        "GUID:796ad526ec1892c43940aea5004e010f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

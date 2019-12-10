@@ -1,0 +1,16 @@
+{
+    "name": "Variable.Model",
+    "references": [
+        "GUID:70fa5a8cb6a86e444a038093f1897f5b",
+        "GUID:76466b83935caf540a6aa3bf5c41ad0f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

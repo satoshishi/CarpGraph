@@ -1,0 +1,16 @@
+{
+    "name": "Graph.Model",
+    "references": [
+        "GUID:d9ff98afcd7c8784b947eed7c9216228",
+        "GUID:81f8ce3d54f94c94ba37be9002792920"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Table.Model",
+    "references": [
+        "GUID:70fa5a8cb6a86e444a038093f1897f5b",
+        "GUID:81f8ce3d54f94c94ba37be9002792920",
+        "GUID:f9adc946a126d724da6dd064ef9ea0ee"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

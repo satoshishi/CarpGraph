@@ -2,7 +2,10 @@
     "name": "Table.Presenter",
     "references": [
         "GUID:76466b83935caf540a6aa3bf5c41ad0f",
-        "GUID:796ad526ec1892c43940aea5004e010f"
+        "GUID:796ad526ec1892c43940aea5004e010f",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:d9ff98afcd7c8784b947eed7c9216228"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

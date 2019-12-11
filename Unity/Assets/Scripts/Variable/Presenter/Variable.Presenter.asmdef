@@ -1,7 +1,9 @@
 {
     "name": "Variable.Presenter",
     "references": [
-        "GUID:223fb949b02f0cf438f4848981001fb3",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:ec271fd16c49cc24ba1061973f0c2b9f",
         "GUID:4f9fdcfaf605c174986122344cf331b7"
     ],
     "includePlatforms": [],

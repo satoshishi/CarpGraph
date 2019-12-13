@@ -7,6 +7,7 @@ using UniRx;
 using Variable.MasterData;
 using Table.MasterData;
 using System.Linq;
+using Graph.Model;
 
 namespace Table.Model
 {
@@ -18,6 +19,8 @@ namespace Table.Model
         private TypeAFloatTableEntityFactory tableFactory;
         [Inject]
         private TypeAFloatTableSizeEntityFactory tableSize;
+        [Inject]
+        private IGraphModel <Vector3> graphModel;
 
         public IObservable<List<PlayerEntity>> Created { get { return created; } }
         private Subject<List<PlayerEntity>> created;
@@ -36,17 +39,41 @@ namespace Table.Model
                 playerRepository.DataStore.FindAll(player =>
                     player.FullData.Contains(entity.feature.ToString()));
 
+            if (playerEntities.Count <= 0)
+                return;
+
             created.OnNext(playerEntities);
 
             List<ITableValueEntity<float>> tableValueEntities = new List<ITableValueEntity<float>>();
-            foreach(PlayerEntity pe in playerEntities)
+            Dictionary<string, List<ITableValueEntity<float>>> PlayerValueDict = new Dictionary<string, List<ITableValueEntity<float>>>();
+
+            foreach (PlayerEntity pe in playerEntities)
             {
-                tableValueEntities.Add(tableFactory.Create(
+                ITableValueEntity<float> tableValue = tableFactory.Create(
                         GetVariableFloatValue(entity.xAxis, pe),
-                        GetVariableFloatValue(entity.xAxis, pe),
-                        GetVariableFloatValue(entity.xAxis, pe)));
+                        GetVariableFloatValue(entity.yAxis, pe),
+                        GetVariableFloatValue(entity.zAxis, pe));
+
+                if (!PlayerValueDict.ContainsKey(pe.Name))
+                    PlayerValueDict.Add(pe.Name, new List<ITableValueEntity<float>>());
+                PlayerValueDict[pe.Name].Add(tableValue);
+
+                tableValueEntities.Add(tableValue);
             }
+
+            ITableSizeEntity<float> tableSizeEntity = tableSize.Create(
+                (float)((object)tableValueEntities.OrderByDescending(_value => _value.xValue).FirstOrDefault().xValue),
+                (float)((object)tableValueEntities.OrderByDescending(_value => _value.xValue).LastOrDefault().xValue),
+
+                (float)((object)tableValueEntities.OrderByDescending(_value => _value.yValue).FirstOrDefault().yValue),
+                (float)((object)tableValueEntities.OrderByDescending(_value => _value.yValue).LastOrDefault().yValue),
+
+                (float)((object)tableValueEntities.OrderByDescending(_value => _value.zValue).FirstOrDefault().zValue),
+                (float)((object)tableValueEntities.OrderByDescending(_value => _value.zValue).LastOrDefault().zValue)
+                );
+            graphModel.UpdateGraph(PlayerValueDict, tableSizeEntity);
         }
+
         public float GetVariableFloatValue(T variableKey, PlayerEntity playerEntity)
         {
             float _value = 0f;

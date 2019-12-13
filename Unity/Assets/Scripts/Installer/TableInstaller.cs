@@ -26,8 +26,8 @@ public class TableInstaller : MonoInstaller<TableInstaller>
             .To< TablePresenter<string>> ()
             .AsTransient();
 
-        Container.Bind<ITableSizeEntity<float>>().To<TypeATableSizeEntity<float>>().AsCached();
-        Container.Bind<ITableValueEntity<float>>().To<TypeATableEntity<float>>().AsCached();
+        Container.Bind<ITableSizeEntity<float>>().To<TypeATableSizeEntity<float>>().AsTransient();
+        Container.Bind<ITableValueEntity<float>>().To<TypeATableEntity<float>>().AsTransient();
 
         Container.BindFactoryCustomInterface<float, float, float, TypeATableEntity<float>,
             TypeATableEntity<float>.TableFloatFactory,

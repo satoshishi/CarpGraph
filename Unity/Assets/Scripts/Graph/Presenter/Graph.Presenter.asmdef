@@ -2,7 +2,10 @@
     "name": "Graph.Presenter",
     "references": [
         "GUID:f9adc946a126d724da6dd064ef9ea0ee",
-        "GUID:5b3a34f1ba979a045b0b8448bc4e982f"
+        "GUID:5b3a34f1ba979a045b0b8448bc4e982f",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:81f8ce3d54f94c94ba37be9002792920"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

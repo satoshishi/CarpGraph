@@ -33,8 +33,7 @@ public class VariableInstaller : MonoInstaller<VariableInstaller>
              TypeAStringVariableEntityFactory>();
 
         Container
-            .Bind(typeof(VariablePresenter), typeof(IInitializable)) 
-            .To<VariablePresenter>()
+            .BindInterfacesTo<VariablePresenter>()
             .AsTransient();
     }
 }

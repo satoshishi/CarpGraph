@@ -10,19 +10,25 @@ namespace Variable.Presenter
 {
     public class VariablePresenter : IInitializable
     {
-        [Inject]
         private IVariableModel model;
-        [Inject]
+        
         private IVariableProvider view;
         // Start is called before the first frame update
 
-        public void Initialize()
+        public VariablePresenter(IVariableModel m,IVariableProvider p)
         {
+            model = m;
+            view = p;
             view.OnChangeValue
                 .Subscribe(_variable =>
                 {
                     model.UpdateVariable(_variable);
                 });
+        }
+
+        void IInitializable.Initialize()
+        {
+
         }
     }
 }
